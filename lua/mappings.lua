@@ -1,12 +1,11 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- pane switching
 map("n", "+", function()
   vim.cmd "wincmd l"
 end)
@@ -20,6 +19,7 @@ map("n", "ß", function()
   vim.cmd "wincmd k"
 end)
 
+-- pane splitting
 map("n", "<C-+>", function()
   vim.cmd.vs()
   vim.cmd "wincmd l"
@@ -39,6 +39,7 @@ map("n", "<C-ß>", function()
   require("telescope.builtin").find_files()
 end)
 
+-- find stuff
 map("n", "<C-p>", function()
   require("telescope.builtin").find_files()
 end)
@@ -48,10 +49,17 @@ map("n", "<C-f>", function()
 end)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- lsp
 map("n", "ö", function()
   require("conform").format { lsp_fallback = true }
 end)
 
+map("n", "<leader>r", function()
+  require "nvchad.lsp.renamer"
+end)
+
+-- productivity
 map("n", "tc", function()
   vim.cmd.norm "gcc"
 end)
@@ -59,3 +67,14 @@ end)
 map("v", "tc", function()
   vim.cmd.norm "gc"
 end)
+
+map("n", "<leader>e", function()
+  require("nvim-tree.api").tree.toggle { focus = true }
+end, { desc = "nvimtree focus window" })
+
+-- Disable mappings
+local nomap = vim.keymap.del
+
+nomap("n", "<leader>gt")
+-- nomap("n", "<leader>rn")
+-- nomap("n", "<leader>ra")
