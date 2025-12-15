@@ -15,6 +15,37 @@ return {
 
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
+  {
+    "Saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "default",
+
+        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-e>"] = { "hide", "fallback" },
+        ["<Tab>"] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.accept()
+            end
+            return require("sidekick").nes_jump_or_apply()
+          end,
+          "fallback",
+        },
+        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+        ["<C-n>"] = { "select_next", "fallback_to_mappings" },
+
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+        ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+      },
+    },
+  },
 
   {
     "kdheepak/lazygit.nvim",
@@ -34,6 +65,15 @@ return {
     -- order to load the plugin when the command is run for the first time
     keys = {
       { "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
+  },
+
+  {
+    "pocco81/auto-save.nvim",
+    lazy = true,
+    event = "InsertLeave",
+    opts = {
+      trigger_events = { "InsertLeave" },
     },
   },
 
