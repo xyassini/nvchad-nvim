@@ -7,7 +7,7 @@ local options = {
     angularhtml = { "prettier" },
     typescript = { "prettier" },
     javascript = { "prettier" },
-    terraform = { "terraform" },
+    terraform = { "terraformls" },
   },
 
   -- format_on_save = {
