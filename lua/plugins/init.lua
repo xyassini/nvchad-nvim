@@ -58,6 +58,15 @@ return {
   },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "User FilePost",
+    opts = {
+      indent = { char = "│", highlight = "IblChar" },
+      scope = { char = "│", highlight = "IblScopeChar", show_start = false, show_end = false },
+    },
+  },
+
+  {
     "kdheepak/lazygit.nvim",
     lazy = true,
     cmd = {
