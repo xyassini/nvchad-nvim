@@ -39,6 +39,21 @@ return {
 
         ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
       },
+
+      sources = { default = { "lsp", "snippets", "path" } },
+      completion = {
+        -- ghost_text = { enabled = true },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 50,
+          window = { border = "single" },
+        },
+
+        -- from nvchad/ui plugin
+        -- exporting the ui config of nvchad blink menu
+        -- helps non nvchad users
+        menu = require("nvchad.blink").menu,
+      },
     },
   },
 
@@ -72,13 +87,21 @@ return {
     },
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "svelte",
+        "angular",
+        "terraform",
+      },
+    },
+  },
 }
