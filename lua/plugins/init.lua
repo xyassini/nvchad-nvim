@@ -24,12 +24,7 @@ return {
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-e>"] = { "hide", "fallback" },
         ["<Tab>"] = {
-          function(cmp)
-            if cmp.is_visible() then
-              return cmp.accept()
-            end
-            return require("sidekick").nes_jump_or_apply()
-          end,
+          "accept",
           "fallback",
         },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },

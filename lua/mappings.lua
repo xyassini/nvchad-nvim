@@ -59,6 +59,10 @@ map("n", "<leader>r", function()
   require "nvchad.lsp.renamer"
 end)
 
+map("n", "<C-Enter>", function()
+  vim.lsp.buf.code_action()
+end)
+
 -- productivity
 map("n", "tc", function()
   vim.cmd.norm "gcc"
