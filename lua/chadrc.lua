@@ -9,10 +9,11 @@ M.base46 = {
   theme = "tokyonight",
   transparency = true,
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  hl_override = {
+    IblChar = {
+      fg = "#1a1a1a",
+    },
+  },
 }
 
 M.nvdash = { load_on_startup = true }
