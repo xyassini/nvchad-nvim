@@ -11,8 +11,22 @@ vim.lsp.config("vtsls", {
     "typescript",
     "typescriptreact",
     "typescript.tsx",
-    "svelte"
+    "svelte",
   },
 })
 
+vim.lsp.config("eslint", {
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    -- "svelte", -- Clashes with svelte language server
+    "astro",
+    "htmlangular",
+  },
+})
 -- read :h vim.lsp.config for changing options of lsp servers
