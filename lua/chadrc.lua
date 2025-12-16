@@ -13,6 +13,9 @@ M.base46 = {
     IblChar = {
       fg = "#1a1a1a",
     },
+    IblScopeChar = {
+      fg = "#555555"
+    }
   },
 }
 
