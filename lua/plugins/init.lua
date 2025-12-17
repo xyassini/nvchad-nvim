@@ -97,6 +97,16 @@ return {
   },
 
   {
+    'miversen33/sunglasses.nvim',
+    lazy = true,
+    event = 'UIEnter',
+    opts = {
+      filter_type = 'SHADE',
+      filter_percent = 0.6,
+    },
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {

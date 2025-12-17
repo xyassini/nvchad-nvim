@@ -15,6 +15,13 @@ M.base46 = {
     },
     IblScopeChar = {
       fg = "#555555",
+    },
+    CursorLine = {
+      bg = "#191919",
+    },
+    CursorLineNr = {
+      fg = "#ffffff",
+      bg = "#333333"
     }
   },
 }
