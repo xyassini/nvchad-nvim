@@ -1,6 +1,21 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "svelte", "eslint", "vtsls", "angularls", "tailwindcss", "terraformls" }
+local servers = {
+  "html",
+  "emmet_language_server",
+  "cssls",
+  "svelte",
+  "eslint",
+  "vtsls",
+  "angularls",
+  "tailwindcss",
+  "terraformls",
+  "tflint",
+  "ansible-lint",
+  "ansiblels",
+  "yamlls",
+  "yamllint",
+}
 vim.lsp.enable(servers)
 
 vim.lsp.config("vtsls", {
