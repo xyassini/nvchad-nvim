@@ -29,7 +29,6 @@ vim.filetype.add {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "yaml", "yaml.ansible" },
   callback = function()
-    print("yaml detected")
     vim.opt_local.expandtab = true
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2

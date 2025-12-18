@@ -15,6 +15,8 @@ local servers = {
   "ansiblels",
   "yamlls",
   "yamllint",
+  "djlint",
+  "jinja_lsp",
 }
 vim.lsp.enable(servers)
 
