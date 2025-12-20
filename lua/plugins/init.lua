@@ -90,12 +90,18 @@ return {
   },
 
   {
-    "antosha417/nvim-lsp-file-operations",
-    ft = "NvimTree",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-tree.lua",
+    "Wansmer/treesj",
+    keys = {
+      {
+        ",",
+        function()
+          require("treesj").toggle()
+        end,
+      },
     },
-    config = true,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      use_default_keymaps = false,
+    },
   },
 }
