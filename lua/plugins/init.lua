@@ -88,4 +88,14 @@ return {
     event = "InsertEnter",
     ft = { "html", "angularhtml", "svelte", "astro", "jsx", "tsx", "typescriptreact", "javascriptreact" },
   },
+
+  {
+    "antosha417/nvim-lsp-file-operations",
+    ft = "NvimTree",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
+    config = true,
+  },
 }
