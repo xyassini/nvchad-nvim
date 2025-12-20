@@ -21,8 +21,8 @@ M.base46 = {
     },
     CursorLineNr = {
       fg = "#ffffff",
-      bg = "#333333"
-    }
+      bg = "#333333",
+    },
   },
 }
 

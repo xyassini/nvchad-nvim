@@ -17,53 +17,13 @@ return {
   { import = "nvchad.blink.lazyspec" },
   {
     "Saghen/blink.cmp",
-    opts = {
-      keymap = {
-        preset = "default",
-
-        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<C-e>"] = { "hide", "fallback" },
-        ["<Tab>"] = {
-          "accept",
-          "fallback",
-        },
-        ["<S-Tab>"] = { "snippet_backward", "fallback" },
-
-        ["<Up>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
-        ["<C-n>"] = { "select_next", "fallback_to_mappings" },
-
-        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
-        ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
-      },
-
-      sources = { default = { "lsp", "snippets", "path" } },
-      completion = {
-        -- ghost_text = { enabled = true },
-        documentation = {
-          auto_show = true,
-          auto_show_delay_ms = 50,
-          window = { border = "single" },
-        },
-
-        -- from nvchad/ui plugin
-        -- exporting the ui config of nvchad blink menu
-        -- helps non nvchad users
-        menu = require("nvchad.blink").menu,
-      },
-    },
+    opts = require "configs.blink",
   },
 
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "User FilePost",
-    opts = {
-      indent = { char = "│", highlight = "IblChar" },
-      scope = { char = "│", highlight = "IblScopeChar", show_start = false, show_end = false },
-    },
+    opts = require "configs.ibl",
   },
 
   {
@@ -91,36 +51,18 @@ return {
     "pocco81/auto-save.nvim",
     lazy = true,
     event = "InsertLeave",
-    opts = {
-      trigger_events = { "InsertLeave" },
-    },
+    opts = require "configs.auto-save",
   },
 
   {
-    'miversen33/sunglasses.nvim',
+    "miversen33/sunglasses.nvim",
     lazy = true,
-    event = 'UIEnter',
-    opts = {
-      filter_type = 'SHADE',
-      filter_percent = 0.6,
-    },
+    event = "UIEnter",
+    opts = require "configs.sunglasses",
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "svelte",
-        "angular",
-        "terraform",
-      },
-    },
+    opts = require "configs.treesitter",
   },
 }
