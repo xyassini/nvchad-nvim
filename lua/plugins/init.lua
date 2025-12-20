@@ -65,4 +65,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = require "configs.treesitter",
   },
+
+  {
+    "andrewferrier/debugprint.nvim",
+    version = "6.*",
+    keys = require "configs.debugprint.keys",
+    opts = require "configs.debugprint.options",
+  },
 }
