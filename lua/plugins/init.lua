@@ -68,8 +68,17 @@ return {
 
   {
     "andrewferrier/debugprint.nvim",
-    version = "6.*",
+    version = "7.*",
     keys = require "configs.debugprint.keys",
     opts = require "configs.debugprint.options",
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    keys = {
+      "cs",
+    },
+    config = true,
   },
 }
