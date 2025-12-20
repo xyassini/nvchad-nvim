@@ -81,4 +81,11 @@ return {
     },
     config = true,
   },
+
+  {
+    "windwp/nvim-ts-autotag",
+    opts = require "configs.autotag",
+    event = "InsertEnter",
+    ft = { "html", "angularhtml", "svelte", "astro", "jsx", "tsx", "typescriptreact", "javascriptreact" },
+  },
 }
