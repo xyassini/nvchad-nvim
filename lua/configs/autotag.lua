@@ -5,3 +5,5 @@ local options = {
     enable_close_on_slash = true,
   },
 }
+
+return options
