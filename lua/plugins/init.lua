@@ -16,7 +16,7 @@ return {
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
   {
-    "Saghen/blink.cmp",
+    "saghen/blink.cmp",
     opts = require "configs.blink",
   },
 
