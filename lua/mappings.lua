@@ -1,5 +1,5 @@
 require "nvchad.mappings"
-local utils = require("utils")
+local utils = require "utils"
 
 local map = vim.keymap.set
 
@@ -54,9 +54,9 @@ end)
 -- other ui things
 
 map("n", "±", function() -- Alt+Plus
-  local api = require("nvim-tree.api")
+  local api = require "nvim-tree.api"
   if api.tree.is_tree_buf() then
-    vim.cmd("NvimTreeResize +5")
+    vim.cmd "NvimTreeResize +5"
   else
     local width = vim.api.nvim_win_get_width(0)
     vim.api.nvim_win_set_width(0, width + 5)
@@ -64,9 +64,9 @@ map("n", "±", function() -- Alt+Plus
 end)
 
 map("n", "•", function() -- Alt+Ü
-  local api = require("nvim-tree.api")
+  local api = require "nvim-tree.api"
   if api.tree.is_tree_buf() then
-    vim.cmd("NvimTreeResize -5")
+    vim.cmd "NvimTreeResize -5"
   else
     local width = vim.api.nvim_win_get_width(0)
     vim.api.nvim_win_set_width(0, width - 5)
@@ -87,11 +87,10 @@ map("n", "æ", function() -- Alt+Ä
   end
 end)
 
-
 map("n", "–", function()
-  local api = require("nvim-tree.api")
+  local api = require "nvim-tree.api"
   if api.tree.is_tree_buf() then
-    vim.cmd("NvimTreeResize -5")
+    vim.cmd "NvimTreeResize -5"
   else
     local width = vim.api.nvim_win_get_width(0)
     vim.api.nvim_win_set_width(0, math.max(width - 5, 5))
@@ -104,8 +103,8 @@ map("n", "–", function()
 end)
 
 map("n", "=", function()
-  vim.cmd("resize")
-  vim.cmd("wincmd =")
+  vim.cmd "resize"
+  vim.cmd "wincmd ="
 end)
 
 -- lsp
@@ -113,9 +112,21 @@ map("n", "ö", function()
   require("conform").format { lsp_fallback = true }
 end)
 
-map("n", "<leader>r", function()
-  require "nvchad.lsp.renamer"
-end)
+map("n", "<leader>rr", function()
+  require("grug-far").open()
+end, { desc = "[Global] Search and replace" })
+
+map("n", "<leader>rw", function()
+  require("grug-far").open { prefills = { search = vim.fn.expand "<cword>" } }
+end, { desc = "[Global] Search and replace word under cursor" })
+
+map("n", "<leader>rW", function()
+  require("grug-far").open { prefills = { paths = vim.fn.expand "%", search = vim.fn.expand "<cword>" } }
+end, { desc = "[Local] Search and replace word under cursor in current file only" })
+
+map("n", "<leader>rf", function()
+  require("grug-far").open { prefills = { paths = vim.fn.expand "%" } }
+end, { desc = "[Local] Search and replace in current file only" })
 
 map("n", "<C-Enter>", function()
   vim.lsp.buf.code_action()

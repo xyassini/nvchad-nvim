@@ -104,4 +104,9 @@ return {
       use_default_keymaps = false,
     },
   },
+
+  {
+    "MagicDuck/grug-far.nvim",
+    opts = {},
+  },
 }
