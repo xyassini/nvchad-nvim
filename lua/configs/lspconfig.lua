@@ -6,7 +6,6 @@ local servers = {
   "cssls",
   "svelte",
   "eslint",
-  "vtsls",
   "angularls",
   "tailwindcss",
   "terraformls",
@@ -17,6 +16,8 @@ local servers = {
   "yamllint",
   "djlint",
   "jinja_lsp",
+  "gopls",
+  "vtsls",
 }
 
 vim.lsp.enable(servers)

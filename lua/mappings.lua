@@ -96,7 +96,7 @@ map("n", "–", function()
     vim.api.nvim_win_set_width(0, math.max(width - 5, 5))
 
     if utils.current_win_has_vertical_neighbor() then
-      local height = vim.api.nvim_win_get_height(0)
+     local height = vim.api.nvim_win_get_height(0)
       vim.api.nvim_win_set_height(0, math.max(height - 2, 2))
     end
   end
