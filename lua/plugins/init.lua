@@ -128,4 +128,23 @@ return {
       },
     },
   },
+
+  {
+    "RRethy/vim-illuminate",
+    event = "VeryLazy",
+    config = function()
+      vim.api.nvim_set_hl(0, "IlluminatedWordRead", {
+        bg = "#30304a",
+        underline = false,
+      })
+      vim.api.nvim_set_hl(0, "IlluminatedWordWrite", {
+        bg = "#30304a",
+        underline = false,
+      })
+      vim.api.nvim_set_hl(0, "IlluminatedWordText", {
+        bg = "#30304a",
+        underline = false,
+      })
+    end,
+  },
 }
