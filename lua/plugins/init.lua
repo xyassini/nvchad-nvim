@@ -14,10 +14,16 @@ return {
   },
 
   -- test new blink
-  { import = "nvchad.blink.lazyspec" },
+  -- { import = "nvchad.blink.lazyspec" },
+  -- {
+  --   "saghen/blink.cmp",
+  --   opts = require "configs.blink",
+  -- },
+  --
+
   {
-    "saghen/blink.cmp",
-    opts = require "configs.blink",
+    "hrsh7th/nvim-cmp",
+    opts = require "configs.cmp",
   },
 
   {
