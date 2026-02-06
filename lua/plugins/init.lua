@@ -109,4 +109,17 @@ return {
     "MagicDuck/grug-far.nvim",
     opts = {},
   },
+
+  {
+    "aznhe21/actions-preview.nvim",
+    keys = {
+      {
+
+        "<C-Enter>",
+        function()
+          require("actions-preview").code_actions()
+        end,
+      },
+    },
+  },
 }

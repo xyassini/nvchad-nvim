@@ -32,11 +32,11 @@ map("n", "<C-ü>", function()
 end)
 map("n", "<C-ä>", function()
   vim.cmd.sp()
-  vim.cmd "wincmd j"
   require("telescope.builtin").find_files()
 end)
 map("n", "<C-ß>", function()
   vim.cmd.sp()
+  vim.cmd "wincmd k"
   require("telescope.builtin").find_files()
 end)
 
@@ -128,9 +128,9 @@ map("n", "<leader>rf", function()
   require("grug-far").open { prefills = { paths = vim.fn.expand "%" } }
 end, { desc = "[Local] Search and replace in current file only" })
 
-map("n", "<C-Enter>", function()
-  vim.lsp.buf.code_action()
-end)
+-- map("n", "<C-Enter>", function()
+--   vim.lsp.buf.code_action()
+-- end)
 
 -- productivity
 map("n", "tc", function()
