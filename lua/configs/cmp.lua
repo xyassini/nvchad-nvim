@@ -12,7 +12,7 @@ local options = {
   },
 
   sources = {
-    { name = "nvim_lsp", max_item_count = 10 },
+    { name = "nvim_lsp", max_item_count = 100 },
     { name = "luasnip", max_item_count = 2 },
     { name = "buffer", max_item_count = 2 },
     { name = "nvim_lua", max_item_count = 5 },
@@ -23,6 +23,12 @@ local options = {
     docs = {
       auto_open = true,
     },
+  },
+
+  window = {
+    completion = cmp.config.window.bordered({
+      max_height = 20
+    })
   },
 
   sorting = {
