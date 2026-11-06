@@ -17,12 +17,12 @@ local servers = {
   "djlint",
   "jinja_lsp",
   "gopls",
-  "vtsls",
+  "tsc",
 }
 
 vim.lsp.enable(servers)
 
-vim.lsp.config("vtsls", {
+vim.lsp.config("tsc", {
   filetypes = {
     "javascript",
     "javascriptreact",
